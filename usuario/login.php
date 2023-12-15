@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
             if ($_SESSION['permissao'] == 1) {
                 header("location:admin/admin.php");
             } else {
-                header("location:index-usuario.php");
+                header("location:index.php");
             }
         }
     } else {
