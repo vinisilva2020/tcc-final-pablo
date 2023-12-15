@@ -11,23 +11,23 @@ if (isset($_POST['login'])) {
     $senha = $_POST['senha'];
 
 
-    $sql = "SELECT * FROM usuarios WHERE nomeusuario ='$usuario';";
-    $resultado = mysqli_query($db, $sql);
+    $sql = "SELECT * FROM usuario WHERE nome ='$usuario';";
+    $resultado = mysqli_query($conexao, $sql);
 
     if (mysqli_num_rows($resultado) > 0) {
 
         $dados = mysqli_fetch_assoc($resultado);
         if (password_verify($senha, $dados['senha'])) {
             session_start();
-            $_SESSION["u_id"] = $dados['u_id'];
-            $_SESSION["nomeusuario"] = $dados['nomeusuario'];
-            $_SESSION["permissao"] = $dados['permissao'];
+            $_SESSION["id_usuario"] = $dados['id_usuario'];
+            $_SESSION["nome"] = $dados['nome'];
+            $_SESSION["nivel"] = $dados['nivel'];
 
 
             if ($_SESSION['permissao'] == 1) {
-                header("location:admin.php");
+                header("location:admin/admin.php");
             } else {
-                header("location:index.php");
+                header("location:index-usuario.php");
             }
         }
     } else {
