@@ -1,0 +1,111 @@
+body {
+	background-color: rgb(193, 84, 84);
+	font-family: monteserrat;
+}
+a {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.wrapper {
+	height: 360px;
+	margin: 10% auto 0;
+	width: 600px;
+	position: relative;
+	perspective: 800px;
+}
+.wrapper .box {
+	position: absolute;
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+	height: 100%;
+	width: 100%;
+}
+.wrapper .box .front, .wrapper .box .back {
+	display: block;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+}
+.wrapper .box .front {
+	background-color: #e7e7e7;
+	box-shadow: 0 2px 15px -2px rgba(0, 0, 0, 0.6);
+}
+.front h2 {
+	font-family: cookie;
+	font-size: 45px;
+	text-align: center;
+}
+.front p {
+	width: 85%;
+	text-align: center;
+	margin: auto;
+	line-height: 1.5;
+	font-size: 20px;
+}
+.wrapper .box .back {
+	background-color: #fff;
+	transform: rotateY(180deg);
+}
+.wrapper .btn {
+	margin-top: 25px;
+}
+.wrapper .box.animated {
+	transform: rotateY(-180deg);
+}
+.wrapper .close {
+	display: block;
+	font-size: 40px;
+	position: absolute;
+	top: 15px;
+	right: 3%;
+	text-decoration: none;
+	color: #262626;
+}
+.btn {
+	color: #fff;
+	display: block;
+	font-size: 15px;
+	margin: 0 auto;
+	max-width: 250px;
+	padding: 15px 0;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #313311;
+	border-radius: 50px;
+}
+.container {
+	border-radius: 5px;
+	background-color: #e7e7e7;
+	padding: 60px;
+	box-shadow: 0 2px 15px -2px rgba(0, 0, 0, 0.6);
+}
+form label {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+	font-family: montserrat;
+}
+input[type=text], input[type=email], textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+input[type="submit"] {
+	background-color: #413b3b;
+	color: #fff;
+	padding: 15px 50px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
